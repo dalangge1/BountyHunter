@@ -8,8 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BountyHunter">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".view.activity.ActivityWelcome"></activity>
+        <activity android:name=".view.activity.ActivityLogin" />
+        <activity android:name=".view.activity.ActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
