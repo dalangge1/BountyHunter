@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bountyhunter.R
-import com.mredrock.cyxbs.common.utils.extensions.startActivityForResult
+import com.example.bountyhunter.extensions.startActivityForResult
 
 class ActivityMain : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

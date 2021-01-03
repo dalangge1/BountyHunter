@@ -12,7 +12,7 @@ import android.view.MotionEvent
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.example.bountyhunter.R
-import com.mredrock.cyxbs.common.utils.extensions.dp2px
+import com.example.bountyhunter.extensions.dp2px
 
 /**
  *@author zhangzhe

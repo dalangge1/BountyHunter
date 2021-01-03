@@ -11,6 +11,6 @@ object UserInfo {
     val password = ""
     val token = ""
     fun checkLogin(): Boolean {
-        return token.isEmpty() // TODO
+        return token.isEmpty() // TODO 通过服务器验证
     }
 }

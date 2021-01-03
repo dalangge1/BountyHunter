@@ -1,4 +1,4 @@
-package com.mredrock.cyxbs.common.utils.extensions
+package com.example.bountyhunter.extensions
 
 import android.app.Activity
 import android.content.Context
@@ -16,11 +16,7 @@ import android.widget.Toast
 import androidx.annotation.DimenRes
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
-import com.example.bountyhunter.extensions.Internals
 
-/**
- * Created by anriku on 2018/8/14.
- */
 
 var screenHeight: Int = 0
 var screenWidth: Int = 0
