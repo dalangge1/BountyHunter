@@ -1,26 +1,44 @@
 package com.example.bountyhunter.utils
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
+import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
-import com.amap.api.maps2d.MapView
+import com.amap.api.maps.MapView
 
 
-class AMapView: MapView {
-    constructor(context: Context): super(context)
-    constructor(context: Context, attributeSet: AttributeSet): super(context, attributeSet)
-    constructor(context: Context, attributeSet: AttributeSet, int: Int): super(context, attributeSet, int)
+class AMapView @JvmOverloads constructor(
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+) : MapView(context, attrs, defStyleAttr) {
 
+    init {
+        setWillNotDraw(false)
+    }
 
-    override fun onDraw(canvas: Canvas?) {
-        Log.e("sandyzhang", width.toString())
+    var mWidth = 0f
+    var mHeight = 0f
 
-        super.onDraw(canvas)
-        canvas?.drawRect(Rect(0,0,100,100), Paint().apply { color = Color.RED })
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
+        mWidth = w.toFloat()
+        mHeight = h.toFloat()
+    }
+
+    override fun draw(canvas: Canvas?) {
+        canvas?.setDrawFilter(
+            PaintFlagsDrawFilter(
+                0,
+                Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG
+            )
+        )
+
+        canvas?.clipPath(Path().apply {
+            addRoundRect(
+                RectF(0f, 0f, mWidth, mHeight),
+                floatArrayOf(50f, 50f, 50f, 50f, 50f, 50f, 50f, 50f),
+                Path.Direction.CCW
+            )
+        })
+        super.draw(canvas)
     }
 
 

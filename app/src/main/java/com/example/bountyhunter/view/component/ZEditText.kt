@@ -3,10 +3,7 @@ package com.example.bountyhunter.view.component
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Matrix
-import android.graphics.Paint
+import android.graphics.*
 import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.core.content.ContextCompat
@@ -31,6 +28,7 @@ class ZEditText : androidx.appcompat.widget.AppCompatEditText {
     }
 
     private var isEmpty = true
+    private var isFocus = true
 
     private var offsetXHint = 0f
     private var offsetXClear = 300f
@@ -52,6 +50,12 @@ class ZEditText : androidx.appcompat.widget.AppCompatEditText {
     private val hintBaseline by lazy {
         val fontMetrics = paint.fontMetrics
         (fontMetrics.bottom - fontMetrics.top) / 2f - fontMetrics.bottom + height / 2
+    }
+
+    override fun onFocusChanged(focused: Boolean, direction: Int, previouslyFocusedRect: Rect?) {
+        isFocus = focused
+        invalidate()
+        super.onFocusChanged(focused, direction, previouslyFocusedRect)
     }
 
     //显示热词字符串，需要在代码中设置进去要显示的热词
@@ -123,12 +127,14 @@ class ZEditText : androidx.appcompat.widget.AppCompatEditText {
             Paint()
         )
         //清空按钮
-        canvas?.drawBitmap(
-            clearBitmap,
-            offsetXClear + width - clearBitmap.width - context.dp2px(8f),
-            (height - clearBitmap.height) / 2f,
-            Paint()
-        )
+        if (isFocus) {
+            canvas?.drawBitmap(
+                clearBitmap,
+                offsetXClear + width - clearBitmap.width - context.dp2px(8f),
+                (height - clearBitmap.height) / 2f,
+                Paint()
+            )
+        }
         canvas?.translate((-scrollX).toFloat(), 0f)
 
     }
