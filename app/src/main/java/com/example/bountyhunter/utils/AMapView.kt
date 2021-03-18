@@ -24,11 +24,9 @@ class AMapView @JvmOverloads constructor(
     }
 
     override fun draw(canvas: Canvas?) {
-        canvas?.setDrawFilter(
-            PaintFlagsDrawFilter(
-                0,
-                Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG
-            )
+        canvas?.drawFilter = PaintFlagsDrawFilter(
+            0,
+            Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG
         )
 
         canvas?.clipPath(Path().apply {
