@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bountyhunter.R
+import com.example.bountyhunter.base.BaseFragment
 
-class FragmentTask : Fragment() {
+class FragmentTask : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

@@ -3,4 +3,9 @@
     <declare-styleable name="ZEditText">
         <attr name="hintText" format="string" />
     </declare-styleable>
+    <declare-styleable name="BottomViewZ">
+        <attr name="checked_src" format="reference"/>
+        <attr name="no_checked_src" format="reference"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
 </resources>

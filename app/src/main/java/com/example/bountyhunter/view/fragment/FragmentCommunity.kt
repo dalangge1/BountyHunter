@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bountyhunter.R
+import com.example.bountyhunter.base.BaseFragment
 
 
-class FragmentCommunity : Fragment() {
+class FragmentCommunity : BaseFragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
