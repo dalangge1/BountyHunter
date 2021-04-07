@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit
  *@description
  */
 interface LoginApi {
-    @POST("Counter4Sql?action=login")
+    @POST("BountyHunterCommunity?action=login")
     @FormUrlEncoded
     fun getToken(
         @Field("user_id") userId: String,

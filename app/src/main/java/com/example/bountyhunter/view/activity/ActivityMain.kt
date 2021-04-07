@@ -1,14 +1,13 @@
 package com.example.bountyhunter.view.activity
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import com.example.bountyhunter.R
-import com.example.bountyhunter.extensions.startActivityForResult
+import com.example.bountyhunter.model.Config
 import kotlinx.android.synthetic.main.activity_main.*
 
 class ActivityMain : AppCompatActivity() {
@@ -19,7 +18,6 @@ class ActivityMain : AppCompatActivity() {
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivityForResult<ActivityLogin>(0)
         setContentView(R.layout.activity_main)
 
 
@@ -32,16 +30,16 @@ class ActivityMain : AppCompatActivity() {
         bottomViewMine.setOnClickListener {
             clrBottomViewSelect()
             bottomViewMine.setSelect(true)
-//            val bundle = Bundle()
-//            bundle.putBoolean("isMine", true)
-//            bundle.putString("userId", Config.userId)
-//            navTo(R.id.action_global_fragmentMine, bundle)
+            val bundle = Bundle()
+            bundle.putBoolean("isMine", true)
+            bundle.putString("userId", Config.userId)
+            navTo(R.id.action_global_fragmentIndividual, bundle)
 
         }
         bottomViewCommunity.setOnClickListener {
             clrBottomViewSelect()
             bottomViewCommunity.setSelect(true)
-//            navTo(R.id.action_global_fragmentCommunity,null)
+            navTo(R.id.action_global_fragmentCommunity, null)
         }
 
         bottomViewGraph.setOnClickListener {
@@ -80,21 +78,6 @@ class ActivityMain : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        finish()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            0 -> {
-
-            }
-            else -> {
-
-            }
-        }
-    }
 
     @SuppressLint("RestrictedApi")
     private fun navTo(id : Int, bundle: Bundle?){

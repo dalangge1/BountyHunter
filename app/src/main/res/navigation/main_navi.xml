@@ -15,5 +15,93 @@
         app:destination="@id/fragmentMap"
         app:launchSingleTop="true"
         app:popEnterAnim="@anim/fragment_open_enter"
-        app:enterAnim="@anim/fragment_open_enter"/>
+        app:enterAnim="@anim/fragment_open_enter" />
+
+
+    <fragment
+        android:id="@+id/fragmentCommunity"
+        android:name="com.example.bountyhunter.view.fragment.FragmentCommunity"
+        android:label="fragment_community"
+        tools:layout="@layout/fragment_community" />
+    <action
+        android:id="@+id/action_global_fragmentCommunity"
+        app:destination="@id/fragmentCommunity"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/fragment_open_enter" />
+
+
+    <fragment
+        android:id="@+id/fragmentIndividual"
+        android:name="com.example.bountyhunter.view.fragment.FragmentIndividual"
+        android:label="fragment_individual"
+        tools:layout="@layout/fragment_individual" />
+    <action
+        android:id="@+id/action_global_fragmentIndividual"
+        app:destination="@id/fragmentIndividual"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/fragment_open_enter" />
+
+    <fragment
+        android:id="@+id/fragmentMessage"
+        android:name="com.example.bountyhunter.view.fragment.FragmentMessage"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" />
+    <action
+        android:id="@+id/action_global_fragmentMessage"
+        app:destination="@id/fragmentMessage"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/fragment_open_enter" />
+
+    <fragment
+        android:id="@+id/fragmentTalkDetail"
+        android:name="com.example.bountyhunter.view.fragment.FragmentTalkDetail"
+        android:label="fragment_talk_detail"
+        tools:layout="@layout/fragment_talk_detail" />
+    <action
+        android:id="@+id/action_global_fragmentTalkDetail"
+        app:destination="@id/fragmentTalkDetail"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+
+    <fragment
+        android:id="@+id/fragmentSetting"
+        android:name="com.example.bountyhunter.view.fragment.FragmentSetting"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_fragmentSetting_pop"
+            app:enterAnim="@anim/alpha_hide"
+            app:exitAnim="@anim/slide_in_bottom"
+            app:popEnterAnim="@anim/slide_out_bottom"
+            app:popExitAnim="@anim/alpha_show"
+            app:popUpTo="@id/fragmentSetting"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragmentSetting"
+        app:destination="@id/fragmentSetting"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+    <fragment
+        android:id="@+id/fragmentTalkEdit"
+        android:name="com.example.bountyhunter.view.fragment.FragmentTalkEdit"
+        android:label="fragment_talk_edit"
+        tools:layout="@layout/fragment_talk_edit" />
+    <action
+        android:id="@+id/action_global_fragmentTalkEdit"
+        app:destination="@id/fragmentTalkEdit"
+        app:enterAnim="@anim/slide_in_bottom"
+        app:exitAnim="@anim/alpha_hide"
+        app:popEnterAnim="@anim/alpha_show"
+        app:popExitAnim="@anim/slide_out_bottom" />
+
 </navigation>

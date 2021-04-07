@@ -4,8 +4,41 @@
         <attr name="hintText" format="string" />
     </declare-styleable>
     <declare-styleable name="BottomViewZ">
-        <attr name="checked_src" format="reference"/>
-        <attr name="no_checked_src" format="reference"/>
-        <attr name="text" format="string"/>
+        <attr name="checked_src" format="reference" />
+        <attr name="no_checked_src" format="reference" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="EditTextZ">
+        <attr name="hint_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ImageViewSelectZ">
+        <attr name="month_text" format="string" />
+        <attr name="month_pic_src" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CommentCountView">
+        <attr name="reply_count_text" format="string" />
+        <attr name="reply_pic_src" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="LikeView">
+        <attr name="like_count_text" format="string" />
+        <attr name="liked_src" format="reference" />
+        <attr name="no_liked_src" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="DragHeadView">
+        <attr name="head_view" format="reference" />
+        <attr name="refreshed_text" format="string" />
+        <attr name="refreshing_text" format="string" />
+        <attr name="before_refresh_text" format="string" />
+        <attr name="can_refresh_text" format="string" />
+        <attr name="refreshed_ic" format="reference" />
+        <attr name="before_ic" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="RoundedImageView">
+        <attr name="left_bottom_corner" format="dimension" />
+        <attr name="left_top_corner" format="dimension" />
+        <attr name="right_top_corner" format="dimension" />
+        <attr name="right_bottom_corner" format="dimension" />
     </declare-styleable>
 </resources>

@@ -16,6 +16,7 @@ import java.lang.reflect.ParameterizedType
 
 abstract class BaseViewModelFragment<T : BaseViewModel> : BaseFragment() {
     lateinit var viewModel: T
+    protected open fun useActivityViewModel() = false
 
     private val progressDialog: ProgressDialog by lazy {
         ProgressDialog(this.context).apply {
@@ -26,8 +27,14 @@ abstract class BaseViewModelFragment<T : BaseViewModel> : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         @Suppress("UNCHECKED_CAST")
-        viewModel = ViewModelProviders.of(this)
-            .get((javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<T>)
+        viewModel = if (useActivityViewModel() && activity != null) {
+            ViewModelProviders.of(requireActivity())
+                .get((javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<T>)
+        } else {
+            ViewModelProviders.of(this)
+                .get((javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<T>)
+        }
+
         activity?.let {
             viewModel.toastEvent.observe(it, Observer { toastString ->
                 if (toastString.isNotBlank()) {
