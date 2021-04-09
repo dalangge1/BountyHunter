@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bountyhunter.R
 import com.example.bountyhunter.base.BaseViewModelFragment
 import com.example.bountyhunter.bean.beannew.ReplyInfo
+import com.example.bountyhunter.model.SettingUtil
 import com.example.bountyhunter.view.adapter.TalkRecyclerViewAdapter
 import com.example.bountyhunter.view.viewmodel.CommunityViewModel
 import kotlinx.android.synthetic.main.fragment_community.*
@@ -28,7 +29,18 @@ class FragmentCommunity : BaseViewModelFragment<CommunityViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        SettingUtil.settingData?.let {
+            viewModel.schoolId = it.schoolId
+            tvTitle.text = "${it.schoolName}社区"
+        }
 
+        if (viewModel.schoolId == -1) {
+            findNavController().navigate(R.id.action_global_fragmentSchool)
+        }
+
+        tvTitle.setOnClickListener {
+            findNavController().navigate(R.id.action_global_fragmentSchool)
+        }
 
 
         recyclerViewTalkList.layoutManager = LinearLayoutManager(context)

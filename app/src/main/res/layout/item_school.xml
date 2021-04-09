@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_describe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/alibaba_regular"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:singleLine="false"
+        android:text="简介"
+        app:layout_constraintEnd_toStartOf="@+id/btn_select"
+        app:layout_constraintStart_toStartOf="@+id/tv_school_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_school_name"
+        tools:ignore="TextViewEdits" />
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_yellow_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="进入"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_school_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/alibaba_regular"
+        android:text="学校名称"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTime"
+        app:layout_constraintStart_toEndOf="@+id/iv_school_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_school_avatar" />
+
+    <com.example.bountyhunter.view.component.RoundedImageView
+        android:id="@+id/iv_school_avatar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:left_bottom_corner="20dp"
+        app:left_top_corner="20dp"
+        app:right_bottom_corner="20dp"
+        app:right_top_corner="20dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_member"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="成员数："
+        app:layout_constraintStart_toStartOf="@+id/tv_describe"
+        app:layout_constraintTop_toBottomOf="@+id/tv_describe" />
+</androidx.constraintlayout.widget.ConstraintLayout>

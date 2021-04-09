@@ -18,9 +18,11 @@ class CommunityViewModel : BaseViewModel() {
 
     val replyInfo: MutableLiveData<ReplyInfo> = MutableLiveData()
 
+    var schoolId: Int = -1
+
 
     fun refreshDynamic() {
-        getAllDynamic(0, 50, "广场")
+        getAllDynamic(0, 50, schoolId.toString())
     }
 
     fun getAllDynamic(pos: Int, size: Int, topic: String) {

@@ -59,8 +59,8 @@ class LikeRecyclerViewAdapter(private val fragment: Fragment?, private var mList
         holder.itemView.setOnClickListener {
             val navController = fragment?.activity?.findNavController(R.id.recyclerViewLikeAccount)
             val bundle = Bundle()
-            bundle.putString("userId", mList[position].userId)
-            bundle.putBoolean("isMine", false)
+            bundle.putString("user_id", mList[position].userId)
+            bundle.putBoolean("is_mine", false)
             navController?.navigate(R.id.action_global_fragmentIndividual, bundle)
         }
 

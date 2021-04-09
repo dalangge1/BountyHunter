@@ -266,8 +266,8 @@ class FragmentTalkDetail : BaseFragment() {
         imageViewUsrPic?.setOnClickListener {
             val navController = Navigation.findNavController(it)
             val bundle = Bundle()
-            bundle.putBoolean("isMine", false)
-            bundle.putString("userId", dynamic?.userId)
+            bundle.putBoolean("is_mine", false)
+            bundle.putString("user_id", dynamic?.userId)
             navController.navigate(R.id.action_global_fragmentIndividual, bundle)
         }
 

@@ -27,11 +27,14 @@ class FragmentIndividual : BaseViewModelFragment<IndividualViewModel>() {
         return inflater.inflate(R.layout.fragment_individual, container, false)
     }
 
+    var userId = ""
+    var userName = ""
+
     @SuppressLint("SetTextI18n")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val isMine = arguments?.getBoolean("isMine")
-        val userId = arguments?.getString("userId")
+        val isMine = arguments?.getBoolean("is_mine")
+        userId = arguments?.getString("user_id") ?: ""
 
         isMine?.let {
             if (!isMine) {
@@ -42,13 +45,27 @@ class FragmentIndividual : BaseViewModelFragment<IndividualViewModel>() {
             }
         }
 
+        if (Config.userId != userId) {
+            btn_message.visibility = View.VISIBLE
+        }
+
+        btn_message.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_global_fragmentMessageCommunicate,
+                Bundle().apply {
+                    putString("friend_id", userId)
+                    putString("friend_name", userName)
+                })
+        }
+
         val listener = SwipeRefreshLayout.OnRefreshListener {
 
 
             if (isMine == true) {
                 viewModel.getUser(Config.userId)
+
             } else {
-                viewModel.getUser(userId ?: "")
+                viewModel.getUser(userId)
             }
 
         }
@@ -56,6 +73,7 @@ class FragmentIndividual : BaseViewModelFragment<IndividualViewModel>() {
         viewModel.user.observeNotNull { user ->
             textViewUsrName.text = user.nickname
             textViewUserId.text = user.userId
+            userName = user.nickname
             if (user.text.isBlank()) {
                 tv_text.text = "TA还没有写个性签名~"
             } else {

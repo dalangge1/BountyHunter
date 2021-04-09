@@ -19,6 +19,19 @@
 
 
     <fragment
+        android:id="@+id/fragmentMarket"
+        android:name="com.example.bountyhunter.view.fragment.FragmentMarket"
+        android:label="fragment_market"
+        tools:layout="@layout/fragment_market" />
+    <action
+        android:id="@+id/action_global_fragmentMarket"
+        app:destination="@id/fragmentMarket"
+        app:enterAnim="@anim/fragment_open_enter"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/fragment_open_enter" />
+
+
+    <fragment
         android:id="@+id/fragmentCommunity"
         android:name="com.example.bountyhunter.view.fragment.FragmentCommunity"
         android:label="fragment_community"
@@ -103,5 +116,88 @@
         app:exitAnim="@anim/alpha_hide"
         app:popEnterAnim="@anim/alpha_show"
         app:popExitAnim="@anim/slide_out_bottom" />
+
+
+    <fragment
+        android:id="@+id/fragmentSchool"
+        android:name="com.example.bountyhunter.view.fragment.FragmentSchool"
+        android:label="fragment_school"
+        tools:layout="@layout/fragment_school">
+        <action
+            android:id="@+id/action_fragmentSchool_pop"
+            app:enterAnim="@anim/alpha_hide"
+            app:exitAnim="@anim/slide_in_bottom"
+            app:popEnterAnim="@anim/slide_out_bottom"
+            app:popExitAnim="@anim/alpha_show"
+            app:popUpTo="@id/fragmentSchool"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragmentSchool"
+        app:destination="@id/fragmentSchool"
+        app:enterAnim="@anim/slide_in_bottom"
+        app:exitAnim="@anim/alpha_hide"
+        app:popEnterAnim="@anim/alpha_show"
+        app:popExitAnim="@anim/slide_out_bottom" />
+
+
+    <fragment
+        android:id="@+id/fragmentMessageCommunicate"
+        android:name="com.example.bountyhunter.view.fragment.FragmentMessageCommunicate"
+        android:label="fragment_message_communicate"
+        tools:layout="@layout/fragment_message_communicate" />
+    <action
+        android:id="@+id/action_global_fragmentMessageCommunicate"
+        app:destination="@id/fragmentMessageCommunicate"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+
+    <fragment
+        android:id="@+id/fragmentGood"
+        android:name="com.example.bountyhunter.view.fragment.FragmentGood"
+        android:label="fragment_good"
+        tools:layout="@layout/fragment_good">
+        <action
+            android:id="@+id/action_fragmentGood_pop"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentGood"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragmentGood"
+        app:destination="@id/fragmentGood"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+
+
+    <fragment
+        android:id="@+id/fragmentGoodEdit"
+        android:name="com.example.bountyhunter.view.fragment.FragmentGoodEdit"
+        android:label="fragment_good_edit"
+        tools:layout="@layout/fragment_good_edit">
+        <action
+            android:id="@+id/action_fragmentGoodEdit_pop"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/fragmentGoodEdit"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragmentGoodEdit"
+        app:destination="@id/fragmentGoodEdit"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
 
 </navigation>

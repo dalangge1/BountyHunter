@@ -21,9 +21,11 @@ import com.example.bountyhunter.R
 import com.example.bountyhunter.base.BaseViewModelFragment
 import com.example.bountyhunter.bean.beannew.User
 import com.example.bountyhunter.model.Config
+import com.example.bountyhunter.model.SettingUtil
 import com.example.bountyhunter.network.FileUploadUtil
 import com.example.bountyhunter.view.activity.ActivityLogin
 import com.example.bountyhunter.view.viewmodel.SettingViewModel
+import com.example.bountyhunter.widgets.OptionalDialog
 import com.example.moneycounter4.widgets.ProgressDialogW
 import com.google.gson.Gson
 import com.tbruyelle.rxpermissions2.RxPermissions
@@ -46,6 +48,8 @@ class FragmentSetting : BaseViewModelFragment<SettingViewModel>() {
         super.onActivityCreated(savedInstanceState)
         ProgressDialogW.show(requireContext(), "提示", "从服务器读取信息中，请稍后", false)
         viewModel.getUser(Config.userId)
+
+        tv_school.text = SettingUtil.settingData!!.userSchoolName
 
         viewModel.change.observeNotNull {
             findNavController().navigate(R.id.action_fragmentSetting_pop)
@@ -80,6 +84,7 @@ class FragmentSetting : BaseViewModelFragment<SettingViewModel>() {
             user.sex = textViewSex.text.toString()
             user.text = tv_text.text.toString()
             user.avatarUrl = picUrl
+            user.schoolId = SettingUtil.settingData!!.userSchoolId
 
             viewModel.changeUserInfo(Gson().toJson(user))
 
@@ -140,17 +145,14 @@ class FragmentSetting : BaseViewModelFragment<SettingViewModel>() {
         }
 
         constraintDel.setOnClickListener {
-            val builder = AlertDialog.Builder(requireContext())
-            builder.setTitle("真的要退出登录嘛~")
-                .setNegativeButton("手滑了", null)
-            builder.setPositiveButton(
-                "去意已决"
-            ) { _, _ ->
+
+            OptionalDialog.show(requireContext(), "要退出登录吗？", {}) {
                 Config.password = ""
                 val intent = Intent(requireContext(), ActivityLogin::class.java)
                 startActivity(intent)
                 requireActivity().finish()
-            }.show()
+            }
+
         }
 
 
@@ -173,6 +175,12 @@ class FragmentSetting : BaseViewModelFragment<SettingViewModel>() {
                 }
             )
             pvOptions.show()
+        }
+
+        constraintSchool.setOnClickListener {
+            findNavController().navigate(R.id.action_global_fragmentSchool, Bundle().apply {
+                putBoolean("change", true)
+            })
         }
 
 

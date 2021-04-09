@@ -1,10 +1,7 @@
 package com.example.bountyhunter.network
 
 import com.example.bountyhunter.bean.base.ApiWrapper
-import com.example.bountyhunter.bean.beannew.DynamicItem
-import com.example.bountyhunter.bean.beannew.Good
-import com.example.bountyhunter.bean.beannew.PrivateMessageItem
-import com.example.bountyhunter.bean.beannew.User
+import com.example.bountyhunter.bean.beannew.*
 import com.example.moneycounter4.beannew.InfoWrapper
 import io.reactivex.Observable
 import retrofit2.http.Field
@@ -94,6 +91,12 @@ interface Api {
         @Field("user_info") userInfo: String
     ): Observable<InfoWrapper>
 
+    /**
+     * 学校
+     */
+    @POST("BountyHunterTransactions?action=getAllSchool")
+    fun getAllSchool(): Observable<ApiWrapper<List<School>>>
+
     @FormUrlEncoded
     @POST("BountyHunterTransactions?action=getAllMember")
     fun getAllMember(@Field("school_id") schoolId: Int): Observable<ApiWrapper<List<User>>>
@@ -127,13 +130,14 @@ interface Api {
      * 私信
      */
 
-    @FormUrlEncoded
     @POST("BountyHunterCommunity?action=getPrivateMessageList")
     fun getPrivateMessageList(): Observable<ApiWrapper<List<PrivateMessageItem>>>
 
     @FormUrlEncoded
     @POST("BountyHunterCommunity?action=getPrivateMessage")
-    fun getPrivateMessage(): Observable<ApiWrapper<List<PrivateMessageItem>>>
+    fun getPrivateMessage(
+        @Field("friend_id") friendId: String
+    ): Observable<ApiWrapper<List<PrivateMessageItem>>>
 
     @FormUrlEncoded
     @POST("BountyHunterCommunity?action=submitPrivateMessage")
@@ -154,7 +158,6 @@ interface Api {
         @Field("friend_id") friendId: String
     ): Observable<InfoWrapper>
 
-    @FormUrlEncoded
     @POST("BountyHunterCommunity?action=countPrivateMessage")
     fun countPrivateMessage(): Observable<ApiWrapper<Int>>
 

@@ -98,8 +98,8 @@ class TalkCommentRecyclerViewAdapter(
         holder.imageViewUsrPic?.setOnClickListener {
             val navController = Navigation.findNavController(holder.itemView)
             val bundle = Bundle()
-            bundle.putBoolean("isMine", false)
-            bundle.putString("userId", mList[position].userId)
+            bundle.putBoolean("is_mine", false)
+            bundle.putString("user_id", mList[position].userId)
             navController.navigate(R.id.action_global_fragmentIndividual, bundle)
         }
 

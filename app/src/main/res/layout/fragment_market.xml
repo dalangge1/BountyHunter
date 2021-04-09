@@ -21,13 +21,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.0"
         app:refreshed_ic="@drawable/ic_positive"
         app:refreshed_text="加载完成！"
         app:refreshing_text="玩命加载中...">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_message"
+            android:id="@+id/rv_good"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="我的消息"
+            android:text="二手市场"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -58,14 +57,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_dismiss_all"
+            android:id="@+id/btn_release_good"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@drawable/shape_yellow_button"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:text="标记全部已读"
+            android:text="发布商品"
             android:textColor="#c36724"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple_setting_item"
+    android:elevation="20dp">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="time"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_message_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_message_content" />
+
+    <TextView
+        android:id="@+id/tv_message_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:maxWidth="240dp"
+        android:text="时间像武汉六月的大雨"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_nickname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.bountyhunter.view.component.RoundedImageView
+        android:id="@+id/iv_user_avatar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_message_content"
+        app:left_bottom_corner="20dp"
+        app:left_top_corner="20dp"
+        app:right_bottom_corner="20dp"
+        app:right_top_corner="20dp" />
+
+    <TextView
+        android:id="@+id/tv_user_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="sandyzhang"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar"
+        app:layout_constraintStart_toEndOf="@+id/iv_user_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_user_avatar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

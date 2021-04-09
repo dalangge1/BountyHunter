@@ -1,6 +1,7 @@
 package com.example.bountyhunter.bean.beannew
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Good(
     @SerializedName("good_id")
@@ -26,4 +27,4 @@ data class Good(
     @SerializedName("get_user")
     var getUser: User? = null
 
-)
+) : Serializable

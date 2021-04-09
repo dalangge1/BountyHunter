@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.FragmentMarket">
+
+
+    <Button
+        android:id="@+id/btn_good_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_yellow_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="删除"
+        android:textColor="#c36724"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_good_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_yellow_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="和TA聊聊"
+        android:textColor="#c36724"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_get_good" />
+
+    <Button
+        android:id="@+id/btn_get_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_yellow_button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="立即拍下"
+        android:textColor="#c36724"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_good_describe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:maxWidth="240dp"
+        android:text="时间像武汉六月的大雨"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_nickname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_is_get2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="已售"
+        android:textColor="#FF0F0F"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_good_name2"
+        app:layout_constraintStart_toEndOf="@+id/tv_good_name2"
+        app:layout_constraintTop_toTopOf="@+id/tv_good_name2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_my_home_appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="商品详细"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.example.bountyhunter.view.component.RoundedImageView
+        android:id="@+id/iv_good"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:maxHeight="240dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        app:left_top_corner="20dp"
+        app:right_top_corner="20dp" />
+
+    <TextView
+        android:id="@+id/tv_good_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="旺仔牛奶"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_good" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="￥"
+        android:textColor="#FF6E3A"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price2"
+        app:layout_constraintEnd_toStartOf="@+id/tv_price2" />
+
+    <TextView
+        android:id="@+id/tv_price2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="6.6"
+        android:textColor="#FF6E3A"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_user_nickname2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_good_name2" />
+
+    <com.example.bountyhunter.view.component.RoundedImageView
+        android:id="@+id/iv_user_avatar2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_good_name2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_good_name2"
+        app:left_bottom_corner="20dp"
+        app:left_top_corner="20dp"
+        app:right_bottom_corner="20dp"
+        app:right_top_corner="20dp" />
+
+    <TextView
+        android:id="@+id/tv_user_nickname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sandyzhang"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user_avatar2"
+        app:layout_constraintStart_toEndOf="@+id/iv_user_avatar2"
+        app:layout_constraintTop_toTopOf="@+id/iv_user_avatar2" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_nickname2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

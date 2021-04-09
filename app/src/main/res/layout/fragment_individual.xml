@@ -53,6 +53,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
+                    <Button
+                        android:id="@+id/btn_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/shape_yellow_button"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:text="私信"
+                        android:textColor="#c36724"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewUsrPic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewUsrPic" />
+
                     <LinearLayout
                         android:id="@+id/linearLayout2"
                         android:layout_width="100dp"
@@ -209,7 +225,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        android:text="月总预算"
+                        android:text="我的地址（仅自己可见）"
                         android:textColor="#ffffff"
                         android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -221,7 +237,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
-                        android:text="查看全部 >"
+                        android:text="修改 >"
                         android:textColor="#ffffff"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

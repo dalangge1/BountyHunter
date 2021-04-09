@@ -29,7 +29,9 @@ class ActivityLogin : BaseViewModelActivity<LoginViewModel>() {
                 ProgressDialogW.hide()
                 toast("登录成功！欢迎回来！")
                 this@ActivityLogin.finish()
-                val intent = Intent(this@ActivityLogin, ActivityMain::class.java)
+                val intent = Intent(this@ActivityLogin, ActivityMain::class.java).apply {
+                    putExtra("login", true)
+                }
                 startActivity(intent)
             }, {
                 ProgressDialogW.hide()

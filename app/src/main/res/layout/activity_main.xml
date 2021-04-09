@@ -44,7 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:no_checked_src="@drawable/ic_list_new_fill"
-            app:text="任务列表"/>
+            app:text="交易市场" />
 
         <com.example.bountyhunter.view.component.BottomViewZ
             android:id="@+id/bottomViewGraph"
@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:no_checked_src="@drawable/ic_graph_new_fill"
-            app:text="购物车"/>
+            app:text="私信" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingMain"

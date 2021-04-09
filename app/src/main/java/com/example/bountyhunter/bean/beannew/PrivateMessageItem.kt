@@ -24,5 +24,8 @@ data class PrivateMessageItem(
 
     // 对方的个人信息
     @SerializedName("friend_user")
-    var friendUser: User? = null
+    var friendUser: User? = null,
+    // 我的个人信息
+    @SerializedName("user")
+    var user: User? = null
 )

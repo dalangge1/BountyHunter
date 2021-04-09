@@ -9,6 +9,7 @@ import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,19 +18,16 @@ import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.bountyhunter.R
-import com.example.bountyhunter.base.BaseFragment
+import com.example.bountyhunter.base.BaseViewModelFragment
 import com.example.bountyhunter.network.FileUploadUtil
-import com.example.bountyhunter.view.viewmodel.CommunityViewModel
+import com.example.bountyhunter.view.viewmodel.GoodViewModel
 import com.example.bountyhunter.widgets.KeyboardController
 import com.example.moneycounter4.widgets.ProgressDialogW
 import com.tbruyelle.rxpermissions2.RxPermissions
-import kotlinx.android.synthetic.main.fragment_talk_edit.*
+import kotlinx.android.synthetic.main.fragment_good_edit.*
 
-class FragmentTalkEdit : BaseFragment() {
+class FragmentGoodEdit : BaseViewModelFragment<GoodViewModel>() {
 
-    companion object {
-        var viewModel: CommunityViewModel? = null
-    }
 
     private var imgPath: String? = null
     private var upLoading = false
@@ -39,7 +37,7 @@ class FragmentTalkEdit : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_talk_edit, container, false)
+        return inflater.inflate(R.layout.fragment_good_edit, container, false)
     }
 
     @SuppressLint("RestrictedApi")
@@ -49,11 +47,6 @@ class FragmentTalkEdit : BaseFragment() {
 
 
 
-        viewModel?.replyInfo?.value?.let {
-            if (it.replyId != -1) {
-                textViewReplyText.text = "回复：@${it.nickname}"
-            }
-        }
 
 
         progressBar.indeterminateDrawable.setColorFilter(
@@ -82,41 +75,27 @@ class FragmentTalkEdit : BaseFragment() {
                 Toast.makeText(requireContext(), "图片还没上传好鸭~", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            if (imgPath.isNullOrBlank()) {
+                Toast.makeText(requireContext(), "请上传商品图片~~", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             activity?.let { it1 -> ProgressDialogW.show(it1, "请稍后", "正在上传~", false) }
-            if ((viewModel?.replyInfo?.value?.replyId ?: -1) == -1) {
-                // 发帖
-                if (imgUrl.isNullOrBlank()) {
-                    viewModel?.releaseDynamic(
-                        editTextTalk.text.toString(),
-                        viewModel?.schoolId.toString()
-                    )
-                } else {
-                    viewModel?.releaseDynamic(
-                        editTextTalk.text.toString(),
-                        viewModel?.schoolId.toString(),
-                        listOf(imgUrl!!)
-                    )
-                }
-            } else {
-                // 回复
-                viewModel?.reply(editTextTalk.text.toString())
-            }
+            Log.e("sandyzhang", imgUrl!!)
+            viewModel.releaseGood(
+                0.0,
+                et_good_name.text.toString(),
+                et_good_describe.text.toString(),
+                imgUrl!!
+            )
         }
-        viewModel?.replyStatus?.observe {
-            ProgressDialogW.hide()
-            if (it) {
-                viewModel?.refreshDynamic()
-                findNavController().popBackStack()
-            }
-        }
-        viewModel?.releaseDynamicStatus?.observe {
+        viewModel.releaseGoodStatus.observeNotNull {
             ProgressDialogW.hide()
             if (it) {
                 val navController = findNavController()
                 while (navController.backStack.size >= 1) {
                     navController.popBackStack()
                 }
-                navController.navigate(R.id.action_global_fragmentCommunity)
+                navController.navigate(R.id.action_global_fragmentMarket)
             }
         }
 

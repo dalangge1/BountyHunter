@@ -19,20 +19,28 @@ class ActivityMain : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (intent.getBooleanExtra("login", false)) {
+//            Thread{
+//                Thread.sleep(1000L)
+//                runOnUiThread {
+//
+//                }
+//            }.start()
+        }
 
 
         bottomViewList.setOnClickListener {
             clrBottomViewSelect()
             bottomViewList.setSelect(true)
-//            navTo(R.id.action_global_fragmentMap,null)
+            navTo(R.id.action_global_fragmentMarket, null)
         }
 
         bottomViewMine.setOnClickListener {
             clrBottomViewSelect()
             bottomViewMine.setSelect(true)
             val bundle = Bundle()
-            bundle.putBoolean("isMine", true)
-            bundle.putString("userId", Config.userId)
+            bundle.putBoolean("is_mine", true)
+            bundle.putString("user_id", Config.userId)
             navTo(R.id.action_global_fragmentIndividual, bundle)
 
         }
@@ -45,7 +53,7 @@ class ActivityMain : AppCompatActivity() {
         bottomViewGraph.setOnClickListener {
             clrBottomViewSelect()
             bottomViewGraph.setSelect(true)
-//            navTo(R.id.action_global_fragmentGraph,null)
+            navTo(R.id.action_global_fragmentMessage, null)
         }
 
         floatingMain.setOnClickListener {

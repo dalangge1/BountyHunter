@@ -8,7 +8,7 @@ data class User(
     @SerializedName("stu_id")
     val stuId: String = "",
     @SerializedName("school_id")
-    val schoolId: Int = 0,
+    var schoolId: Int = 0,
     @SerializedName("nickname")//
     var nickname: String = "",
     @SerializedName("password")//

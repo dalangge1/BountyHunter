@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.FragmentMarket">
+    tools:context=".view.fragment.FragmentSchool">
 
 
     <com.example.bountyhunter.widgets.DragHeadView
@@ -27,7 +27,7 @@
         app:refreshing_text="玩命加载中...">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_message"
+            android:id="@+id/rv_school"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,29 +46,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="我的消息"
+            android:text="学校社区大全"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_dismiss_all"
+            android:id="@+id/btn_create_school"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@drawable/shape_yellow_button"
             android:minWidth="0dp"
             android:minHeight="0dp"
-            android:text="标记全部已读"
+            android:text="申请学校入驻"
             android:textColor="#c36724"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

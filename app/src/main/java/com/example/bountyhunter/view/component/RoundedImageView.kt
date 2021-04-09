@@ -47,6 +47,7 @@ class RoundedImageView @JvmOverloads constructor(
             0,
             Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG
         )
+        adjustViewBounds = true
     }
 
     @SuppressLint("DrawAllocation")
