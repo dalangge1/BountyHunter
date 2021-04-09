@@ -44,7 +44,6 @@
         android:fontFamily="@font/alibaba_regular"
         android:text="学校名称"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/textViewTime"
         app:layout_constraintStart_toEndOf="@+id/iv_school_avatar"
         app:layout_constraintTop_toTopOf="@+id/iv_school_avatar" />
 
