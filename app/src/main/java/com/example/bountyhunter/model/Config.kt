@@ -10,7 +10,7 @@ class Config {
     companion object {
         const val MainUrl = "http://sandyz.ink:8080/BountyHunter/"
         const val PicUploadUrl = "http://sandyz.ink:8080/PicUpload/"
-        var userId = "sandyzhang2"
-        var password = "111111"
+        var userId = ""
+        var password = ""
     }
 }

@@ -13,7 +13,7 @@ import com.example.bountyhunter.network.*
 
 class MarketViewModel : BaseViewModel() {
 
-    var schoolId: Int = -1
+    var schoolId: Int = 0
 
     val goodList = MutableLiveData<List<Good>>()
 

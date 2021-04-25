@@ -18,7 +18,7 @@ class CommunityViewModel : BaseViewModel() {
 
     val replyInfo: MutableLiveData<ReplyInfo> = MutableLiveData()
 
-    var schoolId: Int = -1
+    var schoolId: Int = 0
 
 
     fun refreshDynamic() {

@@ -81,12 +81,16 @@ class FragmentGoodEdit : BaseViewModelFragment<GoodViewModel>() {
             }
             activity?.let { it1 -> ProgressDialogW.show(it1, "请稍后", "正在上传~", false) }
             Log.e("sandyzhang", imgUrl!!)
-            viewModel.releaseGood(
-                0.0,
-                et_good_name.text.toString(),
-                et_good_describe.text.toString(),
-                imgUrl!!
-            )
+            try {
+                viewModel.releaseGood(
+                    et_good_price.text.toString().toDouble(),
+                    et_good_name.text.toString(),
+                    et_good_describe.text.toString(),
+                    imgUrl!!
+                )
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "请输入正确的商品价格！", Toast.LENGTH_SHORT).show()
+            }
         }
         viewModel.releaseGoodStatus.observeNotNull {
             ProgressDialogW.hide()
