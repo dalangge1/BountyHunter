@@ -39,7 +39,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="赏金猎人！"
+        android:text="SEEKER"
         android:textColor="@color/appbar_color"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
